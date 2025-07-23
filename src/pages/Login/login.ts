@@ -1,0 +1,33 @@
+import { Component } from '@angular/core';
+import {  Router,RouterOutlet } from '@angular/router';
+
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+ 
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet,CommonModule, FormsModule],
+  templateUrl: './login.html',
+  styleUrl: './login.css'
+})
+export class Login {
+  protected title = 'projet';
+  email = '';
+  password = '';
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onSubmit() { 
+    this.authService.login({ email: this.email, password: this.password })
+      .subscribe({
+        next: (res) => {
+          console.log('Login success', res);  
+          this.router.navigate(['/dashboard']);
+        },
+        error: (err) => {
+          console.error('Login failed', err);
+        }
+      });
+  }
+}
