@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
 
-
  
 @Component({
   selector: 'app-root',
@@ -31,5 +30,7 @@ export class App {
           console.error('Login failed', err);
         }
       });
-  }
+      
+  
+}
 }

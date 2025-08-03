@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-navigation',
   imports: [],
   templateUrl: './navigation.html',
-  styleUrl: '../Dashboard/dashboard.css'
+  styleUrls: ['../Dashboard/dashboard.css',
+     '../fontawesome-free/css/all.min.css',
+
+  ]
 })
 export class Navigation {
   protected title = 'projet';

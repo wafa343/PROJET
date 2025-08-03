@@ -1,10 +1,11 @@
+<app-sidebar></app-sidebar>
 <app-navigation></app-navigation>
 
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Tableau De Bord</h1>
+        <h1 class="h3 mb-0 text-gray-800">Tableau de Bord</h1>
         
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#importModal">
             <i class="fas fa-download fa-sm text-white-50"></i> Import Un Excel</a>
@@ -19,12 +20,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            TITRES</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> TITRES</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">6393</div>
                         </div>
                         <div class="col-auto">
-                        <i class="fa fa-file"></i>
+                            <i class="fa fa-file"></i>
                         </div>
                     </div>
                 </div>
@@ -37,12 +37,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            REQUISIATION</div>
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">REQUISIATION</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">2300</div>
                         </div>
                         <div class="col-auto">
-                        <i class="fa fa-square-full"></i>
+                            <i class="fa fa-square-full"></i>
                         </div>
                     </div>
                 </div>
@@ -73,12 +72,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                            UTILISATEURS</div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1"> UTILISATEURS</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
                         </div>
                         <div class="col-auto">
-                        <i class="fa fa-users"></i>
+                            <i class="fa fa-users"></i>
                         </div>
                     </div>
                 </div>
@@ -95,59 +93,60 @@
                 <div class="card shadow mb-4">
                    
                     <!-- Project Card Example -->
+                     
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Taux de complétude</h6>
                     </div>
                     <div class="card-body">
-                       <h4 class="small font-weight-bold">Validation des titres<span
-                                class="float-right">81 %</span></h4><br>
+                        <h4 class="small font-weight-bold">
+                            Validation des titres <span class="float-right">{{ valides }} %</span>
+                        </h4><br>
                         <div class="progress mb-4">
-                            <div class="progress-bar  " role="progressbar" 
-                                aria-valuenow="valides" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <br>
-                     
-                        <h4 class="small font-weight-bold">Lecture des messages <span
-                                class="float-right">50%</span></h4><br>
+                            <div class="progress-bar {{ getBarColor(valides) }}" 
+                                role="progressbar"
+                                [style.width.%]="valides"
+                                [attr.aria-valuenow]="valides"
+                                aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div><br>
+
+                        <h4 class="small font-weight-bold">
+                            Lecture des messages <span class="float-right">{{ lecture }} %</span>
+                        </h4><br>
                         <div class="progress">
-                            <div class="progress-bar  bg-success   bg-danger " role="progressbar"
-                                aria-valuenow="lecture" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div><br> 
+                            <div class="progress-bar {{ getBarColor(lecture) }}" 
+                                role="progressbar"
+                                [style.width.%]="lecture"
+                                [attr.aria-valuenow]="lecture"
+                                aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div><br>
                     </div>
                 </div>
                 </div>
             </div>
         <!-- Project Card Example -->
         <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div
-                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Données</h6>
-                    
-                </div>
-                <!-- Card Body -->
-                <div class="card-body" >
-                    <div class="chart-pie pt-4 pb-2" >
-                        <canvas id="myPieChart"></canvas>
-                    </div>
-                    <div class="mt-4 text-center small">
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Titres
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i>Requisitions
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Lotissements
-                        </span>
-                    </div>
-                </div>
+    <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        
+        <div
+            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Données</h6>
+            
+        </div>
+        <!-- Card Body -->
+        <div class="card-body" >
+            <div class="chart-pie pt-4 pb-2" > 
+                <canvas id="MyChart"  ></canvas>
             </div>
         </div>
     </div>
-    <!--footer -->
+</div>
+    </div>
+</div>
+ <!--footer -->
     <footer class="sticky-footer bg-white">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
@@ -155,7 +154,5 @@
             </div>
         </div>
     </footer>
-</div>
- 
-<app-sidebar></app-sidebar>
+
 <router-outlet></router-outlet>

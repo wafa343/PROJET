@@ -26,6 +26,17 @@
             ],
             "styles": [
               "src/styles.css"
+            ],
+            "scripts": [
+              "src/pages/fontawesome-free/chart.js/chart.js",
+              "src/pages/fontawesome-free/js/demo/chart-area-demo.js",
+              "src/pages/fontawesome-free/js/demo/chart-bar-demo.js",
+              "src/pages/fontawesome-free/js/vendor/chart.js/chart.bundle.js",
+              "src/pages/fontawesome-free/js/vendor/chart.js/chart.bundle.min.js",
+              "src/pages/fontawesome-free/js/vendor/chart.js/chart.min.js",
+              "src/pages/fontawesome-free/js/vendor/chart.js/chart.js"   
+              ,   
+              "src/pages/fontawesome-free/js/test.js"   
             ]
           },
           "configurations": {
@@ -83,6 +94,16 @@
             ],
             "styles": [
               "src/styles.css"
+            ],
+            "scripts": [
+              "src/pages/fontawesome-free/chart.js/chart.js",
+              "src/pages/fontawesome-free/js/demo/chart-area-demo.js",
+              "src/pages/fontawesome-free/js/demo/chart-bar-demo.js",
+              "src/pages/fontawesome-free/js/vendor/chart.js/chart.bundle.js",
+              "src/pages/fontawesome-free/js/vendor/chart.js/chart.bundle.min.js",
+              "src/pages/fontawesome-free/js/vendor/chart.js/chart.min.js",
+              "src/pages/fontawesome-free/js/vendor/chart.js/chart.js",   
+              "src/pages/fontawesome-free/js/test.js" 
             ]
           }
         }

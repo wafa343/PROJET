@@ -1,25 +1,25 @@
-// auth.service.ts
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
- 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:8000/api'; // ton backend Laravel
+  private apiUrl = 'http://localhost:8000/api'; // Ton backend Laravel
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  login(data: any) {
+  // Méthode de connexion
+  login(data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, data);
   }
-   /*login(credentials: { email: string; password: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, credentials);
-  }*/
+
+  // ✅ Méthode pour récupérer les statistiques
+  getStats(): Observable<{ valides: number; lecture: number }> {
+    return this.http.get<{ valides: number; lecture: number }>(`${this.apiUrl}/stats`);
+  }
 }
 
  

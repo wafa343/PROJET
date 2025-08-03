@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-sidebar',
   imports: [],
   templateUrl: './sidebar.html',
-  styleUrl: '../Dashboard/dashboard.css'
+  styleUrls: ['../Dashboard/dashboard.css',
+     '../fontawesome-free/css/all.min.css',
+  
+  ]
 })
 export class Sidebar {
   protected title = 'projet';

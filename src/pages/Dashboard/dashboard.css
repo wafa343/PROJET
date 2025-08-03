@@ -542,10 +542,7 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
-.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow {
-  width: 83.3%;
-  float: right;
-}
+
 .container,
 .container-fluid,
 .container-sm,
@@ -12966,4 +12963,32 @@ select {
 
 .text-lg {
   font-size: 1.2rem;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+app-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 225px;
+  height: 100vh;
+  z-index: 1000;
+}
+
+app-navigation {
+  position: fixed;
+  top: 0;
+  left: 225px;
+  right: 0;
+  height: 70px; /* ajustable selon ta navbar */
+  z-index: 1001;
+}
+
+.container-fluid {
+  margin-left: 225px;
+  padding-top: 90px; /* espace pour la navbar */
 }
